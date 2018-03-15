@@ -1,7 +1,38 @@
+html,
+body,
+#body {
+    background-color: lightgrey;
+}
+
 #red {
 color: red;
 }
 
 #green {
 color: green;
+}
+
+#BTC-Price {
+    font-style: bold;
+    font-size: 36px;
+    text-align: center;
+    border: 2px solid #a6a6a6;
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: lightblue;
+    margin-bottom: 4px;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
+#BTC-History {
+    font-size: 24px;
+    text-align: center;
+}
+
+#Price-container {
+    text-align: center;
+    border-bottom: 2px solid;
 }
