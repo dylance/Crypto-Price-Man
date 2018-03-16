@@ -42,6 +42,21 @@ color: green;
 
 }
 
+#ETH-Price {
+    font-style: bold;
+    font-size: 36px;
+    text-align: center;
+    /*border: 2px solid #a6a6a6;*/
+    display: inline-block;
+    margin-top: 10px;
+    border-radius: 10px;
+    color: #999999;
+    margin-bottom: 9px;
+    padding-right: 5px;
+    padding-left: 5px;
+
+}
+
 #BTC-History {
     font-size: 24px;
     text-align: center;

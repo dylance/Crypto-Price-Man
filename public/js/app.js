@@ -2,9 +2,11 @@ var $body = $('body');
 var $btcHead = $('#BTC-Price');
 var $btcHistory = $('#BTC-History');
 var $ltcHead = $('#LTC-Price')
+var $ethHead = $('#ETH-Price')
 
 var btcUrl = "https://api.gdax.com/products/BTC-USD/ticker";
 var ltcUrl = "https://api.gdax.com/products/LTC-USD/ticker";
+var ethUrl = "https://api.gdax.com/products/eth-USD/ticker";
 
 $btcHistory.append('<br>' )
 var oldprice = null
@@ -13,6 +15,7 @@ var newNum = null
 
 firstRequest(btcUrl, $btcHead, "btc");
 firstRequest(ltcUrl, $ltcHead, "ltc");
+firstRequest(ethUrl, $ethHead, "eth");
 /*
 setInterval(function(){ $.getJSON(btcUrl, function(data){
     price = data.price;
