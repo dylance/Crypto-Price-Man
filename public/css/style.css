@@ -16,11 +16,11 @@ color: green;
     font-style: bold;
     font-size: 36px;
     text-align: center;
-    border: 2px solid #a6a6a6;
+    /*border: 2px solid #a6a6a6;*/
     display: inline-block;
     margin-top: 10px;
     border-radius: 10px;
-    background-color: lightblue;
+    color: #61dafb;
     margin-bottom: 4px;
     padding-right: 5px;
     padding-left: 5px;
@@ -35,4 +35,10 @@ color: green;
 #Price-container {
     text-align: center;
     border-bottom: 2px solid;
+    background-color: #282c34;
+}
+
+#header {
+    height: 15px;
+    background-color: #20232a
 }
