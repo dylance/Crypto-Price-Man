@@ -16,6 +16,14 @@ var newNum = null
 firstRequest(btcUrl, $btcHead, "btc");
 firstRequest(ltcUrl, $ltcHead, "ltc");
 firstRequest(ethUrl, $ethHead, "eth");
+
+
+setInterval(function(){
+    firstRequest(btcUrl, $btcHead, "btc");
+    firstRequest(ltcUrl, $ltcHead, "ltc");
+    firstRequest(ethUrl, $ethHead, "eth");
+
+},10500)
 /*
 setInterval(function(){ $.getJSON(btcUrl, function(data){
     price = data.price;
@@ -41,6 +49,17 @@ setInterval(function(){ $.getJSON(btcUrl, function(data){
 */
 
 function firstRequest(url, element,coin){
+$.getJSON(url, function(data){
+    price = data.price;
+    newNum = parseFloat(price)
+    element.html('<img src="img/' + coin + '.png" alt=""> ' + newNum.toLocaleString('en') + ' USD');
+    oldprice = price
+    oldNum = parseFloat(oldprice)
+    console.log(price)
+    })
+}
+
+function secondRequest(url, element,coin){
 $.getJSON(url, function(data){
     price = data.price;
     newNum = parseFloat(price)
