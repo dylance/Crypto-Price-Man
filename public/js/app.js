@@ -1,31 +1,24 @@
 var $body = $('body');
 var $btcHead = $('#BTC-Price');
 var $btcHistory = $('#BTC-History');
+var $ltcHead = $('#LTC-Price')
 
-var url = "https://api.gdax.com/products/BTC-USD/ticker";
+var btcUrl = "https://api.gdax.com/products/BTC-USD/ticker";
+var ltcUrl = "https://api.gdax.com/products/LTC-USD/ticker";
 
 $btcHistory.append('<br>' )
 var oldprice = null
 var oldNum = null
 var newNum = null
 
-$.getJSON(url, function(data){
-    price = data.price;
-    console.log('the datatype is: ')
-    console.log(typeof price);
-    //oldNum = parseFloat(price).toFixed(2)
-    newNum = parseFloat(price)
-    $btcHead.text("BTC is: $" + newNum.toLocaleString('en'));
-    //numdiff = newNum - oldNum
-    oldprice = price
-    oldNum = parseFloat(oldprice)
-    })
-
-setInterval(function(){ $.getJSON(url, function(data){
+firstRequest(btcUrl, $btcHead, "btc");
+firstRequest(ltcUrl, $ltcHead, "ltc");
+/*
+setInterval(function(){ $.getJSON(btcUrl, function(data){
     price = data.price;
     newNum = parseFloat(price)
-
-    $btcHead.text("BTC is: $" + newNum.toLocaleString('en'));
+    $btcHead.text('')
+    $btcHead.append('<img src="img/btc.png" alt=""> ' + newNum.toLocaleString('en') + ' USD');
 
 
     if (newNum - oldNum > 0){
@@ -42,3 +35,14 @@ setInterval(function(){ $.getJSON(url, function(data){
     oldNum = parseFloat(oldprice)
     })
 },10500)
+*/
+
+function firstRequest(url, element,coin){
+$.getJSON(url, function(data){
+    price = data.price;
+    newNum = parseFloat(price)
+    element.append('<img src="img/' + coin + '.png" alt=""> ' + newNum.toLocaleString('en') + ' USD');
+    oldprice = price
+    oldNum = parseFloat(oldprice)
+    })
+}
