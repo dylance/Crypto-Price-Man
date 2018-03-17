@@ -1,12 +1,23 @@
 var $body = $('body');
 var $btcHead = $('#BTC-Price');
-var $btcHistory = $('#BTC-History');
 var $ltcHead = $('#LTC-Price')
 var $ethHead = $('#ETH-Price')
+
+var $btcHigh = $('#BTC-High')
+var $ltcHigh = $('#LTC-High')
+var $ethHigh = $('#ETH-High')
+
+var $btcHistory = $('#BTC-History');
+
+
 
 var btcUrl = "https://api.gdax.com/products/BTC-USD/ticker";
 var ltcUrl = "https://api.gdax.com/products/LTC-USD/ticker";
 var ethUrl = "https://api.gdax.com/products/eth-USD/ticker";
+
+var btcHighUrl = "https://api.gdax.com/products/btc-usd/stats"
+var ltcHighUrl = "https://api.gdax.com/products/ltc-usd/stats"
+var ethHighUrl = "https://api.gdax.com/products/eth-usd/stats"
 
 $btcHistory.append('<br>' )
 var oldprice = null
@@ -16,6 +27,10 @@ var newNum = null
 firstRequest(btcUrl, $btcHead, "btc");
 firstRequest(ltcUrl, $ltcHead, "ltc");
 firstRequest(ethUrl, $ethHead, "eth");
+
+dailyHighRequest(btcHighUrl,$btcHigh ,'btc')
+dailyHighRequest(ltcHighUrl, $ltcHigh,'ltc')
+dailyHighRequest(ethHighUrl, $ethHigh ,'eth')
 
 
 setInterval(function(){
@@ -66,5 +81,15 @@ $.getJSON(url, function(data){
     element.append('<img src="img/' + coin + '.png" alt=""> ' + newNum.toLocaleString('en') + ' USD');
     oldprice = price
     oldNum = parseFloat(oldprice)
+    })
+}
+
+function dailyHighRequest(url, element,coin){
+$.getJSON(url, function(data){
+    high = data.high;
+    newNum = parseFloat(high)
+    element.html('<img src="img/' + coin + '.png" height="35" alt=""> ' + newNum.toLocaleString('en') );
+    //oldprice = price oldNum = parseFloat(oldprice)
+    //console.log(price)
     })
 }

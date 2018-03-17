@@ -1,7 +1,8 @@
 html,
 body,
 #body {
-    background-color: lightgrey;
+
+    /*background-color: #465977;*/
 }
 
 #red {
@@ -20,6 +21,14 @@ color: green;
 
 margin-bottom: 9px;
 
+
+}
+
+#dailyHigh {
+    
+
+    border-bottom: solid 2px;
+    background-color: lightgrey;
 
 }
 
@@ -92,8 +101,9 @@ margin-bottom: 9px;
 }
 
 #header {
-    height: 20px;
+    /*height: 20px;
     background-color: #20232a;
+*/
 }
 
 .history{
