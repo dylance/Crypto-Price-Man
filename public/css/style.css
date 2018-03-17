@@ -25,7 +25,7 @@ margin-bottom: 9px;
 }
 
 #dailyHigh {
-    
+
 
     border-bottom: solid 2px;
     background-color: lightgrey;
@@ -37,6 +37,7 @@ margin-bottom: 9px;
 }
 
 #BTC-Price {
+    font-family: 'Old Standard TT';
     font-style: bold;
     font-size: 36px;
     text-align: center;
@@ -48,6 +49,7 @@ margin-bottom: 9px;
     margin-bottom: 9px;
     padding-right: 5px;
     padding-left: 5px;
+    
 
 
 }
@@ -59,6 +61,7 @@ margin-bottom: 9px;
 }
 
 #LTC-Price {
+    font-family: 'Old Standard TT';
     font-style: bold;
     font-size: 36px;
     text-align: center;
@@ -74,6 +77,7 @@ margin-bottom: 9px;
 }
 
 #ETH-Price {
+    font-family: 'Old Standard TT';
     font-style: bold;
     font-size: 36px;
     text-align: center;
