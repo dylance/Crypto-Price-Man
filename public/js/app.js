@@ -67,7 +67,7 @@ function firstRequest(url, element,coin){
 $.getJSON(url, function(data){
     price = data.price;
     newNum = parseFloat(price)
-    element.html( newNum.toFixed(2).toLocaleString('en') + ' ');
+    element.html( '$' + newNum.toFixed(2).toLocaleString('en') + ' ');
     oldprice = price
     oldNum = parseFloat(oldprice)
     console.log(price)
