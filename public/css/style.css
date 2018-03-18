@@ -33,13 +33,13 @@ margin-bottom: 9px;
 }
 
 #eth-logo {
-    padding-left: 8px;
+    padding-right: 0px;
 }
 
 #BTC-Price {
     font-family: 'Old Standard TT';
     font-style: bold;
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
     /*border: 2px solid #a6a6a6;
     display: inline-block;
@@ -64,7 +64,7 @@ margin-bottom: 9px;
 #LTC-Price {
     font-family: 'Old Standard TT';
     font-style: bold;
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
     /*border: 2px solid #a6a6a6;*/
     display: inline-block;
@@ -81,7 +81,7 @@ margin-bottom: 9px;
 #ETH-Price {
     font-family: 'Old Standard TT';
     font-style: bold;
-    font-size: 36px;
+    font-size: 30px;
     text-align: center;
     /*border: 2px solid #a6a6a6;*/
     display: inline-block;
