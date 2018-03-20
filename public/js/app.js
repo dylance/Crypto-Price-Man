@@ -88,7 +88,7 @@ function dailyHighRequest(url, element,coin){
 $.getJSON(url, function(data){
     high = data.high;
     newNum = parseFloat(high)
-    element.html('<img src="img/' + coin + '.png" height="35" alt=""> ' + newNum.toLocaleString('en') );
+    element.html('<img src="img/' + coin + '.png" height="35" alt=""></br>' + newNum.toLocaleString('en') );
     //oldprice = price oldNum = parseFloat(oldprice)
     //console.log(price)
     })
