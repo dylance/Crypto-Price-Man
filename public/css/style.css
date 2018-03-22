@@ -1,7 +1,7 @@
 html,
 body,
 #body {
-
+    background-color: #20232a;
     /*background-color: #465977;*/
 }
 
@@ -48,7 +48,7 @@ margin-bottom: 9px;
     color: #FF9900;
     margin-bottom: 0px;
     padding-right: 5px;
-/*    padding-left: 5px; */
+    padding-left: 10px;
 
 
 
@@ -74,6 +74,7 @@ margin-bottom: 9px;
     margin-bottom: 9px;
     padding-right: 5px;
     /*padding-left: 5px;*/
+    padding-left: 10px;
 
 
 }
@@ -92,6 +93,7 @@ margin-bottom: 9px;
     padding-right: 5px;
 /*    padding-left: 8px;
     margin-left: -20px;*/
+    padding-left: 10px;
 
 }
 
@@ -115,5 +117,4 @@ margin-bottom: 9px;
 
 .history{
     background-color: #20232a;
-    height: 600px;
 }
