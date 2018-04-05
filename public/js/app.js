@@ -28,9 +28,9 @@ firstRequest(btcUrl, $btcHead, "btc");
 firstRequest(ltcUrl, $ltcHead, "ltc");
 firstRequest(ethUrl, $ethHead, "eth");
 
-dailyHighRequest(btcHighUrl,$btcHigh ,'btc')
-dailyHighRequest(ltcHighUrl, $ltcHigh,'ltc')
-dailyHighRequest(ethHighUrl, $ethHigh ,'eth')
+dailyHighRequestFetch(btcHighUrl,$btcHigh ,'btc')
+dailyHighRequestFetch(ltcHighUrl, $ltcHigh,'ltc')
+dailyHighRequestFetch(ethHighUrl, $ethHigh ,'eth')
 
 
 setInterval(function(){
@@ -83,22 +83,18 @@ $.getJSON(url, function(data){
     })
 }
 
-function dailyHighRequest(url, element,coin){
-$.getJSON(url, function(data){
-    high = data.high;
-    newNum = parseFloat(high)
-    element.html('<img src="img/' + coin + '.png" height="35" alt=""></br>' + newNum.toLocaleString('en') );
-    //oldprice = price oldNum = parseFloat(oldprice)
-    //console.log(price)
-    })
-}
-
 // url (required), options (optional)
-fetch('https://api.gdax.com/products/BTC-USD/ticker').then(function(response) {
-    return response.json();
-}).then(function(myJson){
-    console.log(myJson);
-}).catch(function(err) {
-    console.log("The API Call did not go through!! try again")
-	// Error :(
-});
+function dailyHighRequest(url,element,coin){
+    fetch(url).then(function(response) {
+        return response.json();
+    }).then(function(myJson){
+        high = Number(myJson.high);
+        newNum = parseFloat(high)
+        element.html('<img src="img/' + coin +
+            '.png" height="35" alt=""></br>' +
+            newNum.toLocaleString('en') );
+    }).catch(function(err) {
+        console.log("The API Call did not go through!! try again")
+    	// Error :(
+    });
+}
