@@ -29,6 +29,10 @@ margin-bottom: 9px;
 
     border-bottom: solid 2px;
     background-color: lightgrey;
+    background: linear-gradient(to bottom right,#282c34,lightgrey );
+    border: 1px solid;
+    border-radius: 15px;
+
 
 }
 
