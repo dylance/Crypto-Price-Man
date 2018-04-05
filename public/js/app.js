@@ -28,9 +28,9 @@ firstRequest(btcUrl, $btcHead, "btc");
 firstRequest(ltcUrl, $ltcHead, "ltc");
 firstRequest(ethUrl, $ethHead, "eth");
 
-dailyHighRequestFetch(btcHighUrl,$btcHigh ,'btc')
-dailyHighRequestFetch(ltcHighUrl, $ltcHigh,'ltc')
-dailyHighRequestFetch(ethHighUrl, $ethHigh ,'eth')
+dailyHighRequest(btcHighUrl,$btcHigh ,'btc')
+dailyHighRequest(ltcHighUrl, $ltcHigh,'ltc')
+dailyHighRequest(ethHighUrl, $ethHigh ,'eth')
 
 
 setInterval(function(){
