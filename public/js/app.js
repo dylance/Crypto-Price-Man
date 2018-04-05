@@ -19,7 +19,7 @@ var btcHighUrl = "https://api.gdax.com/products/btc-usd/stats"
 var ltcHighUrl = "https://api.gdax.com/products/ltc-usd/stats"
 var ethHighUrl = "https://api.gdax.com/products/eth-usd/stats"
 
-$btcHistory.append('<br>' )
+$btcHistory.append('<br>')
 var oldprice = null
 var oldNum = null
 var newNum = null
@@ -28,73 +28,45 @@ firstRequest(btcUrl, $btcHead, "btc");
 firstRequest(ltcUrl, $ltcHead, "ltc");
 firstRequest(ethUrl, $ethHead, "eth");
 
-dailyHighRequest(btcHighUrl,$btcHigh ,'btc')
-dailyHighRequest(ltcHighUrl, $ltcHigh,'ltc')
-dailyHighRequest(ethHighUrl, $ethHigh ,'eth')
+dailyHighRequest(btcHighUrl, $btcHigh, 'btc')
+dailyHighRequest(ltcHighUrl, $ltcHigh, 'ltc')
+dailyHighRequest(ethHighUrl, $ethHigh, 'eth')
 
 
-setInterval(function(){
+setInterval(function() {
     firstRequest(btcUrl, $btcHead, "btc");
     firstRequest(ltcUrl, $ltcHead, "ltc");
     firstRequest(ethUrl, $ethHead, "eth");
 
-},10500)
-/*
-setInterval(function(){ $.getJSON(btcUrl, function(data){
-    price = data.price;
-    newNum = parseFloat(price)
-    $btcHead.text('')
-    $btcHead.append('<img src="img/btc.png" alt=""> ' + newNum.toLocaleString('en') + ' USD');
+}, 10500)
 
 
-    if (newNum - oldNum > 0){
-        $btcHistory.append('<br>' + ' $' +  oldNum.toLocaleString('en') + ' - To the moon!!! price is up: $ ' + '<span id="green">' + ( newNum - oldNum).toLocaleString('en') + '</span>')
-    }
-    else if (newNum - oldNum == 0){
-        $btcHistory.append('<br>' + ' $' +  oldNum.toLocaleString('en') + ' - Price is the same as it was ten seconds ago ' )
-    }
-    else {
-        $btcHistory.append('<br>' + ' $' +  oldNum.toLocaleString('en') + ' - Buy the dip!!! price has gone down: $ ' + '<span id="red">' + (newNum - oldNum ).toLocaleString('en') + '</span>')
-    }
-
-    oldprice = price
-    oldNum = parseFloat(oldprice)
-    })
-},10500)
-*/
-
-function firstRequest(url, element,coin){
-$.getJSON(url, function(data){
-    price = data.price;
-    newNum = parseFloat(price)
-    element.html( '$' + newNum.toFixed(2).toLocaleString('en') + ' ');
-    oldprice = price
-    oldNum = parseFloat(oldprice)
-    })
-}
-
-function secondRequest(url, element,coin){
-$.getJSON(url, function(data){
-    price = data.price;
-    newNum = parseFloat(price)
-    element.append('<img src="img/' + coin + '.png" alt=""> ' + newNum.toLocaleString('en') + ' USD');
-    oldprice = price
-    oldNum = parseFloat(oldprice)
+function firstRequest(url, element, coin) {
+    fetch(url).then(function(response) {
+        return response.json();
+    }).then(function(myJson) {
+        price = Number(myJson.price)
+        newNum = parseFloat(price)
+        element.html('$' + newNum.toFixed(2).toLocaleString('en') + ' ');
+        oldprice = price
+        oldNum = parseFloat(oldprice)
+    }).catch(function(err) {
+        console.log("the Gdax API call did not go through!! try again")
     })
 }
 
 // url (required), options (optional)
-function dailyHighRequest(url,element,coin){
+function dailyHighRequest(url, element, coin) {
     fetch(url).then(function(response) {
         return response.json();
-    }).then(function(myJson){
+    }).then(function(myJson) {
         high = Number(myJson.high);
         newNum = parseFloat(high)
         element.html('<img src="img/' + coin +
             '.png" height="35" alt=""></br>' +
-            newNum.toLocaleString('en') );
+            newNum.toLocaleString('en'));
     }).catch(function(err) {
         console.log("The API Call did not go through!! try again")
-    	// Error :(
+        // Error :(
     });
 }
