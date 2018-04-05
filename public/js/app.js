@@ -70,7 +70,6 @@ $.getJSON(url, function(data){
     element.html( '$' + newNum.toFixed(2).toLocaleString('en') + ' ');
     oldprice = price
     oldNum = parseFloat(oldprice)
-    console.log(price)
     })
 }
 
