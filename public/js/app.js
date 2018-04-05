@@ -92,3 +92,11 @@ $.getJSON(url, function(data){
     //console.log(price)
     })
 }
+
+// url (required), options (optional)
+fetch('https://api.gdax.com/products/BTC-USD/ticker').then(function(response) {
+    console.log(response)
+}).catch(function(err) {
+    console.log("The API Call did not go through!! try again")
+	// Error :(
+});
