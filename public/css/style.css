@@ -17,6 +17,24 @@ color: green;
     background-color: #282c34
 }
 
+#BTC-logo{
+    border: 2px solid transparent;
+    border-radius: 45px;
+    
+
+}
+#BTC-logo:hover{
+    border: 2px solid;
+    border-radius: 45px;
+    border-color:  #00A74F;
+    transition: .2s;
+
+}
+
+#BTCSpan{
+
+}
+
 .logo{
 margin-top: 5px;
 margin-bottom: 9px;
@@ -29,7 +47,7 @@ margin-bottom: 9px;
 
     border-bottom: solid 2px;
     background-color: lightgrey;
-    background: linear-gradient(to bottom right,#282c34,lightgrey );
+    background: linear-gradient(to bottom right,#457fca,#5691c8 );
     border: 1px solid;
     border-radius: 15px;
 
@@ -53,6 +71,7 @@ margin-bottom: 9px;
     margin-bottom: 0px;
     padding-right: 5px;
     padding-left: 10px;
+
 
 
 
