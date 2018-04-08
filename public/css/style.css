@@ -20,7 +20,7 @@ color: green;
 #BTC-logo{
     border: 2px solid transparent;
     border-radius: 45px;
-    
+
 
 }
 #BTC-logo:hover{
@@ -30,6 +30,39 @@ color: green;
     transition: .2s;
 
 }
+
+#LTC-Logo{
+    border: 2px solid transparent;
+    border-radius: 45px;
+}
+
+#LTC-Logo:hover{
+    border: 2px solid;
+    border-radius: 45px;
+    border-color:  #646566;
+    transition: .2s;
+
+}
+
+#ETC-Logo{
+    border: 2px solid transparent;
+    border-radius: 45px;
+
+    transition: all .15s;
+}
+
+
+
+
+
+#ETC-Logo:hover{
+    /*border-top: 2px solid;
+    border-color: #646566;*/
+    transform: scale(1.1);
+
+}
+
+
 
 #BTCSpan{
 
